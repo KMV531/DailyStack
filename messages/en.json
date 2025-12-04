@@ -1,0 +1,53 @@
+{
+  "Metadata": {
+    "title": "DailyStack – Your Daily Dose of Tech Updates",
+    "description": "Stay up to date with the latest technology news, tutorials, tools, and industry insights. Freshly curated for developers and tech enthusiasts."
+  },
+  "Header": {
+    "link1": "Home",
+    "link2": "Articles"
+  },
+  "Hero": {
+    "welcome": "Your daily gateway to the tech world.",
+    "description1": "Explore the latest articles, trends, and insights in technology.",
+    "description2": "Stay informed with clean summaries, deep dives, and curated content.",
+    "action": "Start Reading"
+  },
+  "About": {
+    "badge1": "Curated",
+    "description1": "We gather high-quality tech articles from trusted sources.",
+    "badge2": "Practical",
+    "description2": "Stay informed without information overload thanks to clean summaries.",
+    "badge3": "Customizable",
+    "description3": "Choose your topics, set your preferences, and read what matters to you."
+  },
+  "Methods": {
+    "title": "Tech news, refined. Just the way it should be.",
+    "step1": {
+      "title": "Personalize your feed",
+      "description": "Pick your favorite technologies and let DailyStack tailor your experience."
+    },
+    "step2": {
+      "title": "Read from trusted sources",
+      "description": "We aggregate articles from reputable blogs, companies, and industry experts."
+    },
+    "step3": {
+      "title": "Get streamlined updates",
+      "description": "Receive summaries, alerts, and weekly digests directly to your inbox."
+    }
+  },
+  "Action": {
+    "title": "Ready to stay ahead in tech?",
+    "button": "Explore Articles"
+  },
+  "Footer": {
+    "items": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "review": "Send Feedback"
+    }
+  },
+  "ArticlesPage": {
+    "title": "Tips and strategies to boost your business."
+  }
+}
