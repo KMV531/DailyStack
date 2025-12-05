@@ -5,7 +5,7 @@ import { MethodsSection } from "@/Sections/Methods";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <HeroSection />
       <AboutSection />
       <MethodsSection />

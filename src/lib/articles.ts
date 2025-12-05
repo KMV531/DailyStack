@@ -3,8 +3,9 @@ export type Article = {
   title: string;
   slug: string;
   publishedAt: string;
-  categories: string | string[];
+  categories: Array<string>;
   excerpt: string;
   image: string;
-  content: string;
+  alt: string;
+  body: Array<string>;
 };

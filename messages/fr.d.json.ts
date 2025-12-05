@@ -52,6 +52,14 @@ declare const messages: {
   },
   "ArticlesPage": {
     "title": "Articles Récents"
+  },
+  "loader": {
+    "loadingArticles": "Chargement des articles...",
+    "loadingArticle": "Chargement de l'article..."
+  },
+  "error": {
+    "message": "Une erreur est survenue !",
+    "retry": "Veuillez réessayer."
   }
 };
 export default messages;

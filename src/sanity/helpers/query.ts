@@ -11,14 +11,15 @@ export const GET_ARTICLES = defineQuery(
       "categories": categories[]->title,
       publishedAt,
       excerpt,
-      body
+      body,
+      lang
     }
     `
 );
 
 export const ARTICLES_BY_SLUG = defineQuery(
   `
-    *[_type == "post" && slug.current == $slug] | order(name asc)[0]{
+    *[_type == "post" && slug.current == $slug][0]{
     _id,
     title,
     "slug": slug.current,
@@ -27,7 +28,8 @@ export const ARTICLES_BY_SLUG = defineQuery(
     "categories": categories[]->title,
     publishedAt,
     excerpt,
-    body
+    body,
+    lang
   }
   `
 );

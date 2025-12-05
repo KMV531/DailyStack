@@ -63,7 +63,7 @@ export default async function RootLayout({
     notFound();
   }
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning={true}>
       <head>
         <link rel="shortcut icon" href="/Brand-Logo.png" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

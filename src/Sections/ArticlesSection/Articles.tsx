@@ -1,6 +1,7 @@
 "use client";
 
 import { Article } from "@/lib/articles";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -12,19 +13,22 @@ export const Articles = ({
   articles: Article[];
   query: string;
 }) => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const locale = useLocale();
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["all", ...new Set(articles.flatMap((a) => a.categories))];
+  const categories = ["All", ...new Set(articles.flatMap((a) => a.categories))];
 
   const filteredByCategory =
-    activeCategory === "all"
+    activeCategory === "All"
       ? articles
       : articles.filter((article) =>
           article.categories.includes(activeCategory)
         );
 
   const finalFiltered = filteredByCategory.filter((article) =>
-    article.title.toLowerCase().includes(query.toLowerCase())
+    String(article.title[locale as keyof typeof article.title])
+      .toLowerCase()
+      .includes(query.toLowerCase())
   );
 
   return (
@@ -66,10 +70,12 @@ export const Articles = ({
               {article.categories}
             </span>
 
-            <h2 className="text-lg font-semibold mt-1">{article.title}</h2>
+            <h2 className="text-lg font-semibold mt-1">
+              {String(article.title[locale as keyof typeof article.title])}
+            </h2>
 
             <p className="text-sm text-muted-foreground mt-2">
-              {article.excerpt}
+              {String(article.excerpt[locale as keyof typeof article.excerpt])}
             </p>
 
             <p className="text-xs text-muted-foreground mt-3">

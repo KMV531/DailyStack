@@ -13,13 +13,12 @@ export const getArticles = async () => {
   }
 };
 
-export const getArticleBySlug = async (slug: string) => {
+export const getArticleBySlug = async (slug: string, locale: string) => {
   try {
     const article = await sanityFetch({
       query: ARTICLES_BY_SLUG,
-      params: { slug },
+      params: { slug, locale },
     });
-    console.log("Fetched article:", article);
     return article?.data || null;
   } catch (error) {
     console.error(`Error fetching article with slug ${slug}:`, error);

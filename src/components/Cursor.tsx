@@ -108,7 +108,7 @@ export default function Cursor() {
               className="
         absolute top-1/2 left-1/2
         -translate-x-1/2 -translate-y-1/2
-        text-black text-[8px] font-bold
+        text-black text-[10px] font-bold
         pointer-events-none select-none text-center
       "
             >

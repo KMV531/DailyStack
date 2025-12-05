@@ -22,6 +22,7 @@ export default function LanguageSwitcher() {
       value={locale}
       onChange={handleChange}
       className="px-2 py-1 cursor-pointer bg-transparent"
+      data-cursor="clickable"
     >
       {routing.locales.map((loc) => (
         <option key={loc} value={loc} className="text-black">

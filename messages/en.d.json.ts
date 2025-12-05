@@ -52,6 +52,14 @@ declare const messages: {
   },
   "ArticlesPage": {
     "title": "Tips and strategies to boost your business."
+  },
+  "loader": {
+    "loadingArticles": "Loading articles...",
+    "loadingArticle": "Loading article..."
+  },
+  "error": {
+    "message": "Something went wrong!",
+    "retry": "Please try again."
   }
 };
 export default messages;
