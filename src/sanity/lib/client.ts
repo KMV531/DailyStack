@@ -1,6 +1,4 @@
 import { createClient } from "next-sanity";
-
-// import { apiVersion, dataset, projectId } from "../env";
 import { apiVersion, dataset, projectId, token } from "../env.ts";
 
 export const client = createClient({
