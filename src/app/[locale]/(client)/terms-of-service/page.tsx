@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
-// Generate dynamic metadata for the page title
 export async function generateMetadata({
   params,
 }: {
@@ -67,7 +66,7 @@ export default function TermsPage() {
               href={`mailto:${t("contactEmail")}`}
               className="text-indigo-600 hover:text-indigo-500 ml-1 font-medium"
             >
-              {t("contactEmail")}
+              contact@dailystack.com
             </a>
             .
           </p>
