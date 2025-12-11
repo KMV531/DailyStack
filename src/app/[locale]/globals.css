@@ -56,6 +56,10 @@ h4 {
   color: white;
 }
 
+.highlight {
+  color: gray;
+}
+
 /* Hide the native cursor */
 html,
 body {

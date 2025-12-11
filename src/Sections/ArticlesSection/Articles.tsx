@@ -1,10 +1,7 @@
-"use client";
-
-import { Article } from "@/lib/articles";
-import { useLocale } from "next-intl";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+import { Article } from "@/lib/articles";
 
 export const Articles = ({
   articles,
@@ -13,38 +10,36 @@ export const Articles = ({
   articles: Article[];
   query: string;
 }) => {
-  const locale = useLocale();
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeSource, setActiveSource] = useState("All");
 
-  const categories = ["All", ...new Set(articles.flatMap((a) => a.categories))];
+  // Use the source field as categories
+  const sources = ["All", ...new Set(articles.map((a) => a.source))];
 
-  const filteredByCategory =
-    activeCategory === "All"
+  // Filter by source instead of categories
+  const filteredBySource =
+    activeSource === "All"
       ? articles
-      : articles.filter((article) =>
-          article.categories.includes(activeCategory)
-        );
+      : articles.filter((article) => article.source === activeSource);
 
-  const finalFiltered = filteredByCategory.filter((article) =>
-    String(article.title[locale as keyof typeof article.title])
-      .toLowerCase()
-      .includes(query.toLowerCase())
+  // Further filter by search query
+  const finalFiltered = filteredBySource.filter((article) =>
+    String(article.title).toLowerCase().includes(query.toLowerCase())
   );
 
   return (
     <main className="max-w-6xl mx-auto my-10 px-8 lg:px-0">
       {/* Tabs */}
-      <div className="flex items-center justify-center gap-4 mb-6">
-        {categories.map((cat) => (
+      <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
+        {sources.map((src) => (
           <button
-            key={cat}
+            key={src}
             className={`px-4 py-2 rounded text-white ${
-              activeCategory === cat ? "bg-blue-600" : "bg-gray-700"
+              activeSource === src ? "bg-blue-600" : "bg-gray-700"
             }`}
-            onClick={() => setActiveCategory(cat)}
+            onClick={() => setActiveSource(src)}
             data-cursor="clickable"
           >
-            {cat}
+            {src}
           </button>
         ))}
       </div>
@@ -53,30 +48,27 @@ export const Articles = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         {finalFiltered.map((article) => (
           <Link
-            href={`/articles/${article.slug}`}
+            href={article.url}
+            target="_blank"
+            rel="noopener noreferrer"
             key={article._id}
-            data-cursor="clickable"
             className="rounded-xl border p-4 bg-card shadow-sm hover:shadow-md transition"
+            data-cursor="clickable"
           >
             <Image
               width={300}
               height={300}
-              src={article.image}
+              src="/placeholder-image.jpeg"
               alt={article.title}
               className="rounded-md mb-4 h-40 w-full object-cover"
             />
+            <h1 className="text-lg font-semibold mt-1 text-primary highlight">
+              {article.title}
+            </h1>
 
             <span className="text-sm text-primary font-medium">
-              {article.categories}
+              {article.source}
             </span>
-
-            <h2 className="text-lg font-semibold mt-1">
-              {String(article.title[locale as keyof typeof article.title])}
-            </h2>
-
-            <p className="text-sm text-muted-foreground mt-2">
-              {String(article.excerpt[locale as keyof typeof article.excerpt])}
-            </p>
 
             <p className="text-xs text-muted-foreground mt-3">
               {new Date(article.publishedAt).toLocaleDateString()}

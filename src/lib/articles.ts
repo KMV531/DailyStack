@@ -1,11 +1,7 @@
 export type Article = {
   _id: string;
   title: string;
-  slug: string;
+  url: string;
   publishedAt: string;
-  categories: Array<string>;
-  excerpt: string;
-  image: string;
-  alt: string;
-  body: Array<string>;
+  source: string;
 };
