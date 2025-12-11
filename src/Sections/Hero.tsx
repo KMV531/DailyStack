@@ -22,12 +22,10 @@ export const HeroSection = () => {
             {t("welcome")}
           </motion.h1>
           <motion.p
-            className="inline-flex space-x-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.1 }}
           >
-            <Image src="/clock.png" alt="Clock Icon" width={20} height={15} />
             <span className="text-sm md:text-lg lg:text-xl text-gray-300">
               {t("description1")}
             </span>
@@ -38,7 +36,6 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.3 }}
           >
-            <Image src="/store.png" alt="Store Icon" width={20} height={15} />
             <span className="text-sm md:text-lg lg:text-xl text-gray-300">
               {t("description2")}
             </span>

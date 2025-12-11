@@ -8,7 +8,8 @@ declare const messages: {
   },
   "Header": {
     "link1": "Accueil",
-    "link2": "Articles"
+    "link2": "Articles",
+    "link3": "Fermer"
   },
   "Hero": {
     "welcome": "Votre dose quotidienne d'actualité tech.",

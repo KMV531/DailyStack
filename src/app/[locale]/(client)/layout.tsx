@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import Cursor from "@/components/Cursor";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -73,6 +74,7 @@ export default async function RootLayout({
         className={`${montserrat.variable} ${playfairDisplay.variable} antialiased`}
       >
         <Cursor />
+        <BackToTop />
         <NextIntlClientProvider>
           <Header />
           {children}

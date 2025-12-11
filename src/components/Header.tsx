@@ -2,6 +2,7 @@ import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { MobileNav } from "./MobileNav";
 
 export const Header = () => {
   const t = useTranslations("Header");
@@ -19,12 +20,20 @@ export const Header = () => {
           />
         </Link>
         <nav className="flex items-center justify-between space-x-8 cursor-pointer text-white">
-          <Link href={"/"} data-cursor="clickable">
+          <Link href={"/"} data-cursor="clickable" className="hidden lg:block">
             {t("link1")}
           </Link>
-          <Link href={"/articles"} data-cursor="clickable">
+          <Link
+            href={"/articles"}
+            data-cursor="clickable"
+            className="hidden lg:block"
+          >
             {t("link2")}
           </Link>
+
+          <div className="block lg:hidden">
+            <MobileNav />
+          </div>
           <LanguageSwitcher />
         </nav>
       </div>
