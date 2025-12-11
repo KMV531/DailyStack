@@ -2,8 +2,31 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useMemo } from "react";
 import { Article } from "@/lib/articles";
-// Import the separated, reusable pagination component
 import { ArticlesPaginationComponent } from "@/components/PaginationComponent";
+
+// -------------------------------------------------------------------
+// 1. DEFINE THE SOURCE-TO-IMAGE MAP (OUTSIDE THE COMPONENT)
+// -------------------------------------------------------------------
+
+// IMPORTANT: Ensure the keys (e.g., "Tech News") exactly match the values
+// in your article.source property.
+const SOURCE_IMAGE_MAP: { [key: string]: string } = {
+  // Replace these with the actual image paths for your sources
+  "Next.js Official": "/nextjs_image.jpeg",
+  "React Official": "/react_image.png",
+  "TypeScript Dev Blog": "/typescript_image.png",
+  "Smashing Magazine (Design/UX)": "/Smashing_Magazine_(Design-UX)_image.jpg",
+  "DEV Community": "/DEV-Community_image.png",
+  "Hacker News (Trends)": "/Hacker-News_(Trends)_image.webp",
+  "Anime News Network (ANN)": "/animes_image.jpg",
+  // Add all other sources here
+};
+
+const DEFAULT_IMAGE_SRC = "/placeholder-image.jpeg";
+
+// -------------------------------------------------------------------
+// 2. ARTICLES COMPONENT
+// -------------------------------------------------------------------
 
 export const Articles = ({
   articles,
@@ -13,11 +36,13 @@ export const Articles = ({
   query: string;
 }) => {
   const [activeSource, setActiveSource] = useState("All");
-  const [currentPage, setCurrentPage] = useState(1); // <-- KEEP THIS STATE
-  const articlesPerPage = 6; // <-- KEEP THIS CONSTANT
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 6;
 
-  // Filtering Logic (remains the same)
+  // ... (Filtering and Pagination Calculations remain the same)
+
   const sources = ["All", ...new Set(articles.map((a) => a.source))];
+  // ... (filteredBySource, finalFiltered, totalPages, paginatedArticles definitions) ...
 
   const filteredBySource =
     activeSource === "All"
@@ -28,7 +53,6 @@ export const Articles = ({
     String(article.title).toLowerCase().includes(query.toLowerCase())
   );
 
-  // Pagination Calculations (remains the same, using useMemo)
   const totalPages = useMemo(() => {
     return Math.ceil(finalFiltered.length / articlesPerPage);
   }, [finalFiltered.length]);
@@ -79,34 +103,40 @@ export const Articles = ({
 
       {/* Articles Grid (Mapping over paginatedArticles) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        {paginatedArticles.map((article) => (
-          // ... Article Link component JSX ...
-          <Link
-            href={article.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={article._id}
-            className="rounded-xl border p-4 bg-card shadow-sm hover:shadow-md transition"
-            data-cursor="clickable"
-          >
-            <Image
-              width={300}
-              height={300}
-              src="/placeholder-image.jpeg"
-              alt={article.title}
-              className="rounded-md mb-4 h-40 w-full object-cover"
-            />
-            <h1 className="text-lg font-semibold mt-1 text-primary highlight">
-              {article.title}
-            </h1>
-            <span className="text-sm text-primary font-medium">
-              {article.source}
-            </span>
-            <p className="text-xs text-muted-foreground mt-3">
-              {new Date(article.publishedAt).toLocaleDateString()}
-            </p>
-          </Link>
-        ))}
+        {paginatedArticles.map((article) => {
+          // 3. GET THE DYNAMIC IMAGE SOURCE HERE
+          const imageSrc =
+            SOURCE_IMAGE_MAP[article.source] || DEFAULT_IMAGE_SRC;
+
+          return (
+            <Link
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={article._id}
+              className="rounded-xl border p-4 bg-card shadow-sm hover:shadow-md transition"
+              data-cursor="clickable"
+            >
+              <Image
+                width={300}
+                height={300}
+                // 4. USE THE DYNAMIC SOURCE
+                src={imageSrc}
+                alt={article.title}
+                className="rounded-md mb-4 h-40 w-full object-cover"
+              />
+              <h1 className="text-lg font-semibold mt-1 text-primary highlight">
+                {article.title}
+              </h1>
+              <span className="text-sm text-primary font-medium">
+                {article.source}
+              </span>
+              <p className="text-xs text-muted-foreground mt-3">
+                {new Date(article.publishedAt).toLocaleDateString()}
+              </p>
+            </Link>
+          );
+        })}
       </div>
 
       {/* Pagination Component (Cleanly imported and used!) */}

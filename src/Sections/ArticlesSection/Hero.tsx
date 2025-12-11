@@ -29,7 +29,7 @@ export const HeroArticlesPage = ({ onSearch }: HeroArticlesPageProps) => {
         <div>
           <Input
             type="text"
-            placeholder="Search articles..."
+            placeholder={t("placeholder")}
             className="w-full max-w-md mt-4 text-white"
             onChange={(e) => onSearch(e.target.value)}
           />

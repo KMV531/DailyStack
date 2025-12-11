@@ -44,12 +44,13 @@
   "Footer": {
     "items": {
       "terms": "Conditions d'utilisation",
-      "privacy": "Politique de confidentialité",
-      "review": "Envoyer un feedback"
+      "privacy": "Politique de confidentialité"
     }
   },
   "ArticlesPage": {
-    "title": "Articles Récents"
+    "Metadata": "Découvrez nos Articles Récents | DailyStack",
+    "title": "Articles Récents",
+    "placeholder": "Recherche..."
   },
   "loader": {
     "loadingArticles": "Chargement des articles...",
@@ -58,5 +59,26 @@
   "error": {
     "message": "Une erreur est survenue !",
     "retry": "Veuillez réessayer."
+  },
+  "Legal": {
+    "termsTitle": "Conditions d'Utilisation | DailyStack",
+    "privacyTitle": "Politique de Confidentialité | DailyStack",
+    "lastUpdated": "Dernière mise à jour :",
+    "siteName": "DailyStack",
+    "contactEmail": "contact@dailystack.com",
+
+    "termsIntro": "Bienvenue sur DailyStack. En accédant à notre site ou en l'utilisant, vous acceptez d'être lié par les présentes Conditions d'Utilisation. Si vous n'êtes pas d'accord avec une partie de ces conditions, vous ne pouvez pas accéder au service.",
+    "termsUseHeading": "1. Licence d'Utilisation",
+    "termsUseText": "L'autorisation est accordée de télécharger temporairement une copie des documents (informations ou logiciels) sur le site web de DailyStack, uniquement pour une visualisation personnelle, non commerciale et transitoire. Ceci est l'octroi d'une licence, et non un transfert de titre.",
+    "termsDisclaimerHeading": "2. Clause de Non-responsabilité",
+    "termsDisclaimerText": "Les documents sur le site web de DailyStack sont fournis 'tels quels'. DailyStack n'offre aucune garantie, expresse ou implicite, et décline par la présente toute autre garantie, y compris, sans limitation, les garanties implicites de qualité marchande, d'adéquation à un usage particulier ou de non-contrefaçon.",
+
+    "privacyIntro": "Votre vie privée est importante pour nous. Cette Politique de Confidentialité décrit comment DailyStack collecte, utilise et divulgue vos informations personnelles lorsque vous visitez ou utilisez notre Service.",
+    "privacyDataHeading": "1. Données que Nous Collectons",
+    "privacyDataText": "Nous collectons les informations que vous nous fournissez directement, comme votre adresse e-mail si vous vous abonnez à une newsletter. Nous collectons également automatiquement des données non personnelles comme l'adresse IP, le type de navigateur et les pages visitées, en utilisant des outils comme Google Analytics.",
+    "privacyUseHeading": "2. Comment Nous Utilisons Vos Données",
+    "privacyUseText": "Les informations collectées sont utilisées pour fournir et maintenir le Service, l'améliorer, comprendre comment notre Service est utilisé, et communiquer avec vous (par exemple, envoyer des mises à jour ou des newsletters).",
+    "privacyCookiesHeading": "3. Témoins (Cookies)",
+    "privacyCookiesText": "Nous utilisons des 'témoins' (cookies) pour recueillir des informations et suivre l'activité sur notre Service. Vous pouvez demander à votre navigateur de refuser tous les cookies ou d'indiquer quand un cookie est envoyé."
   }
 }

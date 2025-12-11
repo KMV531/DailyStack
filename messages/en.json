@@ -44,12 +44,13 @@
   "Footer": {
     "items": {
       "terms": "Terms of Service",
-      "privacy": "Privacy Policy",
-      "review": "Send Feedback"
+      "privacy": "Privacy Policy"
     }
   },
   "ArticlesPage": {
-    "title": "Tips and strategies to boost your business."
+    "Metadata": "Discover our Recent Articles | DailyStack",
+    "title": "Recent Articles",
+    "placeholder": "Search articles..."
   },
   "loader": {
     "loadingArticles": "Loading articles...",
@@ -58,5 +59,26 @@
   "error": {
     "message": "Something went wrong!",
     "retry": "Please try again."
+  },
+  "Legal": {
+    "termsTitle": "Terms of Service | DailyStack",
+    "privacyTitle": "Privacy Policy | DailyStack",
+    "lastUpdated": "Last Updated:",
+    "siteName": "DailyStack",
+    "contactEmail": "yukiarnold56@gmail.com",
+
+    "termsIntro": "Welcome to DailyStack. By accessing or using our website, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, then you may not access the service.",
+    "termsUseHeading": "1. Use License",
+    "termsUseText": "Permission is granted to temporarily download one copy of the materials (information or software) on DailyStack's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.",
+    "termsDisclaimerHeading": "2. Disclaimer",
+    "termsDisclaimerText": "The materials on DailyStack's website are provided on an 'as is' basis. DailyStack makes no warranties, expressed or implied, and hereby disclaims all other warranties including, without limitation, implied warranties of merchantability, fitness for a particular purpose, or non-infringement.",
+
+    "privacyIntro": "Your privacy is important to us. This Privacy Policy describes how DailyStack collects, uses, and discloses your personal information when you visit or use our Service.",
+    "privacyDataHeading": "1. Data We Collect",
+    "privacyDataText": "We collect information you directly provide us, such as your email address if you subscribe to a newsletter. We also automatically collect non-personal data like IP address, browser type, and pages visited, using tools like Google Analytics.",
+    "privacyUseHeading": "2. How We Use Your Data",
+    "privacyUseText": "The collected information is used for providing and maintaining the Service, improving the Service, understanding how our Service is used, and communicating with you (e.g., sending updates or newsletters).",
+    "privacyCookiesHeading": "3. Cookies",
+    "privacyCookiesText": "We use 'cookies' to collect information and track activity on our Service. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent."
   }
 }

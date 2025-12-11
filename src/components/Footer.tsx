@@ -20,15 +20,20 @@ export const Footer = () => {
 
         {/* Links Container */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 text-[#7EA4D7] text-sm sm:text-base">
-          <p className="hover:text-white transition-colors duration-300 cursor-pointer">
+          <Link
+            href={"/terms-of-service"}
+            className="hover:text-white transition-colors duration-300 cursor-pointer"
+            data-cursor="clickable"
+          >
             {t("items.terms")}
-          </p>
-          <p className="hover:text-white transition-colors duration-300 cursor-pointer">
+          </Link>
+          <Link
+            href={"/privacy-policy"}
+            className="hover:text-white transition-colors duration-300 cursor-pointer"
+            data-cursor="clickable"
+          >
             {t("items.privacy")}
-          </p>
-          <p className="hover:text-white transition-colors duration-300 cursor-pointer">
-            {t("items.review")}
-          </p>
+          </Link>
         </div>
       </div>
     </footer>
