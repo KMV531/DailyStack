@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "import-nextjs": "npx ts-node --project ./tsconfig.json scripts/import-nextjs.ts"
+    "import-nextjs": "ts-node -r dotenv/config scripts/import-nextjs.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
