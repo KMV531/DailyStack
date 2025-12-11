@@ -8,6 +8,10 @@ import Cursor from "@/components/Cursor";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import { draftMode } from "next/headers";
+import DisableDraftMode from "@/components/DisableDraftMode";
+import { VisualEditing } from "next-sanity/visual-editing";
+import { SanityLive } from "@/sanity/lib/live";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -73,6 +77,12 @@ export default async function RootLayout({
       <body
         className={`${montserrat.variable} ${playfairDisplay.variable} antialiased`}
       >
+        {(await draftMode()).isEnabled && (
+          <>
+            <DisableDraftMode />
+            <VisualEditing />
+          </>
+        )}
         <Cursor />
         <BackToTop />
         <NextIntlClientProvider>
@@ -80,6 +90,7 @@ export default async function RootLayout({
           {children}
           <Footer />
         </NextIntlClientProvider>
+        <SanityLive />
       </body>
     </html>
   );
