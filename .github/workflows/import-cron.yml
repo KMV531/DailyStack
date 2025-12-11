@@ -26,7 +26,7 @@ jobs:
 
       - name: Install Project Dependencies
         # Use 'npm ci' for clean, consistent installs in CI/CD environments
-        run: npm ci
+        run: npm install
 
       # 2. Run the Script with Secrets
       - name: Execute Sanity Data Import
