@@ -83,7 +83,9 @@ export default async function RootLayout({
             <VisualEditing />
           </>
         )}
-        <Cursor />
+        <div className="hidden lg:block">
+          <Cursor />
+        </div>
         <BackToTop />
         <NextIntlClientProvider>
           <Header />

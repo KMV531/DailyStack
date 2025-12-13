@@ -68,7 +68,7 @@ declare const messages: {
     "privacyTitle": "Politique de Confidentialité | DailyStack",
     "lastUpdated": "Dernière mise à jour :",
     "siteName": "DailyStack",
-    "contactEmail": "contact@dailystack.com",
+    "contactEmail": "yukiarnold56@gmail.com",
 
     "termsIntro": "Bienvenue sur DailyStack. En accédant à notre site ou en l'utilisant, vous acceptez d'être lié par les présentes Conditions d'Utilisation. Si vous n'êtes pas d'accord avec une partie de ces conditions, vous ne pouvez pas accéder au service.",
     "termsUseHeading": "1. Licence d'Utilisation",
